@@ -6,12 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
 
 
     TextView text1, text2, text3, text4;
     SharedPreferences sPref;;
-    SharedPreferences sPref2;;
+//    SharedPreferences sPref2;
+    HashMap<String, ?> mapOfPref = new HashMap<>();
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,17 +38,20 @@ public class MainActivity extends AppCompatActivity {
         text4.setText(plat2.getVar2());
 
         sPref = getSharedPreferences("dataStore", Context.MODE_PRIVATE);
-        sPref2 = getSharedPreferences("objNameStore", Context.MODE_PRIVATE);
+//        sPref2 = getSharedPreferences("objNameStore", Context.MODE_PRIVATE);
     }
 
     void saveObject(Platezh platezh) {
         SharedPreferences.Editor editor = sPref.edit();
-        editor.putString(platezh.getObName() + "1", platezh.getVar1());
-        editor.putString(platezh.getObName() + "2", platezh.getVar2());
+        editor.putString(platezh.getObName() + "_var1", platezh.getVar1());
+        editor.putString(platezh.getObName() + "_var2", platezh.getVar2());
 
-        SharedPreferences.Editor editor2 = sPref2.edit();
-        editor2.putString("name", platezh.getObName());
+//        SharedPreferences.Editor editor2 = sPref2.edit();
+//        editor2.putString("name", platezh.getObName());
+    }
 
+    void loadObject() {
+//        mapOfPref = sPref.getAll();
 
 
     }
