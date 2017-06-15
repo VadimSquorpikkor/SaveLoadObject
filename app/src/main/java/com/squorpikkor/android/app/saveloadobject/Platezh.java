@@ -2,10 +2,16 @@ package com.squorpikkor.android.app.saveloadobject;
 
 // Created by VadimSquorpikkor on 12.06.2017.
 
+import android.content.SharedPreferences;
+
+import static com.squorpikkor.android.app.saveloadobject.MainActivity.sPref;
+
 class Platezh {
     private String var1;
     private String var2;
     private String obName;
+//    SharedPreferences
+
 
     Platezh(String s1, String s2, String name) {
         var1 = s1;
@@ -33,7 +39,7 @@ class Platezh {
         return obName;
     }
 
-    public void setObName(String obName) {
-        this.obName = obName;
-    }
+//    void save() {
+//        sPref = getSharedPreferences
+//    }
 }
